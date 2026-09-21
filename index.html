@@ -23,6 +23,8 @@
     --apricot-50:#FDF2E8; --apricot-200:#F6DCC2;--apricot-600:#96622F;
     --lilac-50:#F5F0FB;   --lilac-200:#DED0F0;  --lilac-600:#68509A;
 
+    --mark-ink:#121620;
+    --mark-blue:#253166;
     --accent:var(--indigo-600);
     --radius:14px;
     box-sizing:border-box;
@@ -39,6 +41,7 @@
       --sage-50:#172219;    --sage-200:#2E4636;   --sage-600:#9ED3B4;
       --apricot-50:#241C14; --apricot-200:#4A3722;--apricot-600:#E6BA8A;
       --lilac-50:#1F1A2A;   --lilac-200:#3B3154;  --lilac-600:#C4AEE8;
+      --mark-ink:#E7E9EF;   --mark-blue:#8EA0DE;
     }
   }
   *,*::before,*::after{box-sizing:inherit}
@@ -69,11 +72,18 @@
     background:radial-gradient(circle,var(--sage-200),transparent 68%);opacity:.5;
   }
   .hero .wrap{position:relative;z-index:1}
-  .mark{color:var(--indigo-600);display:block;width:2.6rem;height:2.6rem;margin-bottom:1.5rem}
-  h1{
-    font-family:Archivo,system-ui,sans-serif;font-weight:700;
-    font-size:clamp(2.35rem,8.5vw,3.9rem);line-height:0.98;
-    letter-spacing:-0.035em;margin:0 0 1rem;
+  .mark{display:block;width:4rem;height:3.37rem;margin-bottom:1.4rem}
+  .mark .letter{stroke:var(--mark-ink)}
+  .mark .rails{stroke:var(--mark-blue)}
+  h1{margin:0 0 1.1rem;font-weight:400}
+  h1 .wm{
+    display:block;font-family:Archivo,system-ui,sans-serif;font-weight:700;
+    font-size:clamp(2.3rem,8.4vw,3.85rem);line-height:0.97;letter-spacing:-0.037em;
+  }
+  h1 .wm-sub{
+    display:block;font-family:Archivo,system-ui,sans-serif;font-weight:500;
+    font-size:clamp(.95rem,3.4vw,1.25rem);letter-spacing:.24em;
+    color:var(--indigo-600);margin-top:.5rem;
   }
   .tagline{
     font-family:Archivo,system-ui,sans-serif;font-weight:500;
@@ -280,13 +290,17 @@
 
 <header class="hero">
   <div class="wrap">
-    <svg class="mark rise" viewBox="0 0 64 64" aria-hidden="true">
-      <g fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M14 51 L32 13 L50 51"/>
-        <path d="M24.5 33.5 H39.5"/><path d="M22 40 H42"/><path d="M19.5 46.5 H44.5"/>
+    <svg class="mark rise" viewBox="0 0 76 64" aria-hidden="true">
+      <g fill="none" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round">
+        <g class="rails">
+          <path d="M18.7 29 H52"/><path d="M15.0 38 H60"/><path d="M11.3 47 H68"/>
+        </g>
+        <g class="letter">
+          <path d="M26 9 L7 55"/><path d="M26 9 L45 55"/>
+        </g>
       </g>
     </svg>
-    <h1 class="rise r2">António Abreu</h1>
+    <h1 class="rise r2"><span class="wm">António Abreu</span><span class="wm-sub">Consulting</span></h1>
     <p class="tagline rise r3">Project management and client success, built on a web3, machine learning and software engineering background.</p>
     <p class="tagline-sub rise r4">I run multi-workstream technical programmes and own the client relationship around them — scoping the work, staffing it, and making sure what gets delivered is what was sold. Currently running ecosystem programmes and client accounts at OpenZeppelin, and teaching programming at ESTGV – Instituto Politécnico de Viseu.</p>
     <div class="meta-row rise r5">
@@ -472,7 +486,7 @@
     <div class="contact">
       <h2>Let's talk</h2>
       <p>I take on a small number of clients at a time, on retainer or per engagement, and I am happy to work under your own confidentiality terms.</p>
-      <a class="mail" href="mailto:REPLACE-WITH-YOUR-EMAIL">REPLACE-WITH-YOUR-EMAIL</a>
+      <a class="mail" href="mailto:antoniojmabreu@gmail.com">antoniojmabreu@gmail.com</a>
     </div>
   </div>
 </section>
@@ -481,7 +495,7 @@
 
 <footer>
   <div class="wrap">
-    <span>António Abreu · independent consultant · Viseu, Portugal</span>
+    <span>António Abreu Consulting · independent consultant · Viseu, Portugal</span>
     <a href="https://www.linkedin.com/company/antonio-abreu-consulting">LinkedIn</a>
   </div>
 </footer>

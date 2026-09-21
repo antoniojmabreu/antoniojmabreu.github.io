@@ -3,243 +3,527 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>António Abreu — Machine learning, software and technical delivery</title>
-<meta name="description" content="Freelance consultant in Viseu, Portugal. Machine learning and software engineering, technical leadership and project delivery, Web3 programme coordination, and programming taught at ESTGV.">
+<title>António Abreu — Technical programme delivery and client success</title>
+<meta name="description" content="Freelance consultant in Viseu, Portugal. Multi-workstream programme delivery and client account ownership, Web3 ecosystem programmes, machine learning and software engineering, and technical training.">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Libre+Franklin:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --paper: #F3F1EC;
-    --ink: #1A1917;
-    --muted: #5F5B54;
-    --rule: #D5D0C6;
-    --rule-soft: #E3DFD6;
-    --plum: #6B2737;
-    box-sizing: border-box;
-  }
-  *, *::before, *::after { box-sizing: inherit; }
-  html { -webkit-text-size-adjust: 100%; }
-  body {
-    margin: 0; background: var(--paper); color: var(--ink);
-    font-family: "Libre Franklin", system-ui, -apple-system, "Segoe UI", sans-serif;
-    font-size: 17px; line-height: 1.6;
-  }
-  .wrap { max-width: 46rem; margin: 0 auto; padding: 3.5rem 1.5rem 5rem; }
+  :root{
+    --ground:#F8F9FC;
+    --surface:#FFFFFF;
+    --ink:#1C2333;
+    --muted:#6B7488;
+    --line:#E4E8F1;
+    --line-soft:#EEF1F7;
 
-  .name {
-    font-family: "Instrument Serif", Georgia, serif; font-weight: 400;
-    font-size: clamp(2.6rem, 11vw, 4.4rem); line-height: 0.98;
-    letter-spacing: -0.02em; margin: 0 0 1.4rem;
-  }
-  .pitch {
-    font-size: clamp(1.1rem, 3.4vw, 1.3rem); line-height: 1.45;
-    max-width: 31rem; margin: 0 0 1.5rem;
-  }
-  .pitch em { font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-size: 1.12em; }
-  .locale {
-    color: var(--muted); font-size: .92rem; margin: 0;
-    padding-top: 1.25rem; border-top: 1px solid var(--rule); max-width: 31rem;
-  }
+    --indigo-50:#EEF1FC;  --indigo-200:#C9D2F2; --indigo-600:#4A57A8;
+    --sage-50:#EBF5EF;    --sage-200:#C6E2D2;   --sage-600:#38795D;
+    --apricot-50:#FDF2E8; --apricot-200:#F6DCC2;--apricot-600:#96622F;
+    --lilac-50:#F5F0FB;   --lilac-200:#DED0F0;  --lilac-600:#68509A;
 
-  section { margin-top: 4rem; }
-  h2 {
-    font-family: "Instrument Serif", Georgia, serif; font-weight: 400;
-    font-size: 1.9rem; letter-spacing: -0.01em; margin: 0 0 1.75rem;
+    --accent:var(--indigo-600);
+    --radius:14px;
+    box-sizing:border-box;
   }
-  p { margin: 0 0 1rem; max-width: 34rem; }
-  p:last-child { margin-bottom: 0; }
-
-  .services { display: grid; gap: 0; }
-  @media (min-width: 46rem) { .services { grid-template-columns: 1fr 1fr; column-gap: 2.5rem; } }
-  .service { padding: 1.4rem 0; border-top: 1px solid var(--rule-soft); }
-  .service h3 { font-size: 1.02rem; font-weight: 600; margin: 0 0 .45rem; }
-  .service p { font-size: .95rem; color: var(--muted); margin: 0; max-width: none; }
-
-  .track { border-left: 2px solid var(--rule); padding-left: 1.4rem; }
-  .role { margin-bottom: 1.6rem; }
-  .role:last-child { margin-bottom: 0; }
-  .role h3 { font-size: 1rem; font-weight: 600; margin: 0 0 .15rem; }
-  .role .when { color: var(--muted); font-size: .86rem; margin: 0 0 .4rem; }
-  .role p { font-size: .95rem; margin: 0; }
-
-  .stack { margin-top: 1.5rem; }
-  .stack dt {
-    font-size: .8rem; font-weight: 600; color: var(--muted);
-    margin-top: 1rem;
-  }
-  .stack dt:first-child { margin-top: 0; }
-  .stack dd { margin: .2rem 0 0; font-size: .95rem; }
-
-  .credentials { list-style: none; padding: 0; margin: 0; }
-  .credentials li {
-    padding: .85rem 0; border-top: 1px solid var(--rule-soft); font-size: .95rem;
-  }
-  .credentials li:first-child { border-top: none; padding-top: 0; }
-  .credentials span { color: var(--muted); display: block; font-size: .86rem; }
-
-  .cta { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--rule); }
-  .cta h2 { margin-bottom: 1.1rem; }
-  .cta p { font-size: 1.08rem; max-width: 32rem; }
-  a { color: var(--plum); text-decoration-thickness: 1px; text-underline-offset: 3px; }
-  a:hover { color: var(--ink); }
-  a:focus-visible { outline: 2px solid var(--plum); outline-offset: 3px; }
-  .mail {
-    font-family: "Instrument Serif", Georgia, serif; font-size: 1.5rem;
-    display: inline-block; margin-top: .5rem; word-break: break-all;
-  }
-
-  footer {
-    margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--rule);
-    color: var(--muted); font-size: .86rem;
-  }
-  footer p { max-width: none; }
-
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --paper: #171614; --ink: #EDEAE4; --muted: #9B958B;
-      --rule: #322F2A; --rule-soft: #262320; --plum: #D89AA6;
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --ground:#13161D;
+      --surface:#191D26;
+      --ink:#E7E9EF;
+      --muted:#98A0B2;
+      --line:#272C38;
+      --line-soft:#1F232C;
+      --indigo-50:#1C2135;  --indigo-200:#39436B; --indigo-600:#A9B5E8;
+      --sage-50:#172219;    --sage-200:#2E4636;   --sage-600:#9ED3B4;
+      --apricot-50:#241C14; --apricot-200:#4A3722;--apricot-600:#E6BA8A;
+      --lilac-50:#1F1A2A;   --lilac-200:#3B3154;  --lilac-600:#C4AEE8;
     }
+  }
+  *,*::before,*::after{box-sizing:inherit}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:4.5rem}
+  body{
+    margin:0;background:var(--ground);color:var(--ink);
+    font-family:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+    font-size:16.5px;line-height:1.62;
+  }
+  a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:3px}
+  a:focus-visible,button:focus-visible,summary:focus-visible{
+    outline:2px solid var(--accent);outline-offset:3px;border-radius:6px
+  }
+  .wrap{max-width:60rem;margin:0 auto;padding:0 1.35rem}
+
+  /* ============ hero ============ */
+  .hero{position:relative;overflow:hidden;padding:3.25rem 0 2.75rem}
+  .hero::before,.hero::after{
+    content:"";position:absolute;border-radius:50%;filter:blur(64px);
+    pointer-events:none;z-index:0;
+  }
+  .hero::before{
+    width:32rem;height:32rem;top:-14rem;right:-10rem;
+    background:radial-gradient(circle,var(--indigo-200),transparent 68%);opacity:.55;
+  }
+  .hero::after{
+    width:26rem;height:26rem;bottom:-14rem;left:-9rem;
+    background:radial-gradient(circle,var(--sage-200),transparent 68%);opacity:.5;
+  }
+  .hero .wrap{position:relative;z-index:1}
+  .mark{color:var(--indigo-600);display:block;width:2.6rem;height:2.6rem;margin-bottom:1.5rem}
+  h1{
+    font-family:Archivo,system-ui,sans-serif;font-weight:700;
+    font-size:clamp(2.35rem,8.5vw,3.9rem);line-height:0.98;
+    letter-spacing:-0.035em;margin:0 0 1rem;
+  }
+  .tagline{
+    font-family:Archivo,system-ui,sans-serif;font-weight:500;
+    font-size:clamp(1.08rem,3.9vw,1.42rem);line-height:1.42;
+    letter-spacing:-0.012em;margin:0 0 1rem;max-width:33rem;
+  }
+  .tagline-sub{color:var(--muted);margin:0 0 1.75rem;max-width:33rem;font-size:.98rem}
+  .meta-row{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center}
+  .pill{
+    display:inline-flex;align-items:center;gap:.45rem;
+    font-size:.86rem;font-weight:500;padding:.4rem .85rem;border-radius:99px;
+    background:var(--sage-50);color:var(--sage-600);border:1px solid var(--sage-200);
+  }
+  .pill .dot{width:.45rem;height:.45rem;border-radius:50%;background:currentColor}
+  .pill.plain{background:var(--surface);color:var(--muted);border-color:var(--line)}
+  .btn{
+    display:inline-flex;align-items:center;gap:.45rem;cursor:pointer;
+    font-family:inherit;font-size:.9rem;font-weight:600;
+    padding:.6rem 1.05rem;border-radius:99px;border:1px solid transparent;
+    background:var(--ink);color:var(--ground);text-decoration:none;
+    transition:transform .14s ease,opacity .14s ease;
+  }
+  .btn:hover{transform:translateY(-1px);opacity:.9;color:var(--ground)}
+  .btn.ghost{background:var(--surface);color:var(--ink);border-color:var(--line)}
+  .btn.ghost:hover{border-color:var(--accent);color:var(--accent)}
+  #copied{font-size:.84rem;color:var(--sage-600);opacity:0;transition:opacity .2s ease}
+  #copied.on{opacity:1}
+
+  /* ============ sticky nav ============ */
+  nav{
+    position:sticky;top:0;z-index:20;
+    background:color-mix(in srgb,var(--ground) 86%,transparent);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
+  }
+  @supports not (backdrop-filter:blur(2px)){nav{background:var(--ground)}}
+  nav ul{
+    display:flex;gap:.25rem;list-style:none;margin:0;padding:.55rem 1.35rem;
+    overflow-x:auto;scrollbar-width:none;max-width:60rem;margin:0 auto;
+  }
+  nav ul::-webkit-scrollbar{display:none}
+  nav a{
+    display:block;white-space:nowrap;text-decoration:none;color:var(--muted);
+    font-size:.87rem;font-weight:500;padding:.35rem .7rem;border-radius:99px;
+    transition:background .15s ease,color .15s ease;
+  }
+  nav a:hover{color:var(--ink)}
+  nav a[aria-current="true"]{background:var(--indigo-50);color:var(--indigo-600)}
+
+  /* ============ sections ============ */
+  section{padding:3.25rem 0 0}
+  .eyebrow{
+    font-family:Archivo,system-ui,sans-serif;font-weight:600;
+    font-size:1.55rem;letter-spacing:-0.02em;margin:0 0 .35rem;
+  }
+  .lede{color:var(--muted);margin:0 0 1.6rem;max-width:34rem;font-size:.97rem}
+
+  /* expandable primary services */
+  .svc{
+    background:var(--surface);border:1px solid var(--line);
+    border-radius:var(--radius);margin-bottom:.7rem;overflow:hidden;
+    transition:border-color .16s ease;
+  }
+  .svc:hover{border-color:var(--indigo-200)}
+  .svc[open]{border-color:var(--indigo-200)}
+  .svc > summary{
+    cursor:pointer;list-style:none;display:flex;align-items:flex-start;gap:.85rem;
+    padding:1.15rem 1.2rem;
+  }
+  .svc > summary::-webkit-details-marker{display:none}
+  .svc .tint{
+    flex:0 0 auto;width:2.1rem;height:2.1rem;border-radius:9px;
+    display:grid;place-items:center;font-family:Archivo,sans-serif;
+    font-weight:700;font-size:.82rem;letter-spacing:-.02em;
+  }
+  .svc:nth-of-type(1) .tint{background:var(--indigo-50);color:var(--indigo-600)}
+  .svc:nth-of-type(2) .tint{background:var(--sage-50);color:var(--sage-600)}
+  .svc:nth-of-type(3) .tint{background:var(--apricot-50);color:var(--apricot-600)}
+  .svc .head{flex:1;min-width:0}
+  .svc h3{
+    font-family:Archivo,system-ui,sans-serif;font-weight:600;
+    font-size:1.04rem;letter-spacing:-0.012em;margin:0;line-height:1.3;
+  }
+  .svc .hint{margin:.2rem 0 0;font-size:.89rem;color:var(--muted)}
+  .badge{
+    display:inline-block;font-size:.68rem;font-weight:600;letter-spacing:.04em;
+    background:var(--indigo-50);color:var(--indigo-600);
+    border-radius:99px;padding:.1rem .5rem;margin-left:.45rem;vertical-align:.14em;
+  }
+  .chev{
+    flex:0 0 auto;width:1.1rem;height:1.1rem;margin-top:.4rem;color:var(--muted);
+    transition:transform .2s ease;
+  }
+  .svc[open] .chev{transform:rotate(180deg)}
+  .svc .body{padding:0 1.2rem 1.25rem 4.15rem}
+  .svc .body p{margin:0;font-size:.95rem;color:var(--muted)}
+
+  /* secondary services */
+  .also{display:grid;gap:.7rem;margin-top:1.4rem}
+  .also > div{
+    background:var(--surface);border:1px solid var(--line-soft);
+    border-radius:11px;padding:.95rem 1.05rem;
+  }
+  .also h4{font-size:.95rem;font-weight:600;margin:0 0 .2rem}
+  .also p{margin:0;font-size:.89rem;color:var(--muted)}
+
+  /* timeline */
+  .tl{display:grid;gap:.7rem}
+  .entry{
+    background:var(--surface);border:1px solid var(--line);
+    border-left:3px solid var(--indigo-200);
+    border-radius:0 var(--radius) var(--radius) 0;padding:1.1rem 1.2rem;
+  }
+  .entry.sage{border-left-color:var(--sage-200)}
+  .entry.lilac{border-left-color:var(--lilac-200)}
+  .entry .yr{
+    font-family:Archivo,sans-serif;font-weight:600;font-size:.76rem;
+    letter-spacing:.04em;color:var(--muted);margin:0 0 .3rem;
+  }
+  .entry h3{
+    font-family:Archivo,system-ui,sans-serif;font-weight:600;
+    font-size:1.02rem;letter-spacing:-0.01em;margin:0 0 .1rem;
+  }
+  .entry .who{color:var(--muted);font-size:.87rem;margin:0 0 .55rem}
+  .entry p:last-child{margin:0;font-size:.94rem}
+
+  /* stack */
+  .stack{display:grid;gap:1.25rem}
+  .stack h4{
+    font-size:.74rem;font-weight:600;letter-spacing:.05em;
+    color:var(--muted);margin:0 0 .5rem;
+  }
+  .tags{display:flex;flex-wrap:wrap;gap:.35rem;margin:0;padding:0;list-style:none}
+  .tags li{
+    font-size:.84rem;padding:.25rem .65rem;border-radius:7px;
+    background:var(--indigo-50);color:var(--indigo-600);
+  }
+  .stack div:nth-child(2) .tags li{background:var(--sage-50);color:var(--sage-600)}
+  .stack div:nth-child(3) .tags li{background:var(--apricot-50);color:var(--apricot-600)}
+  .stack div:nth-child(4) .tags li{background:var(--lilac-50);color:var(--lilac-600)}
+
+  /* credentials */
+  .creds{list-style:none;padding:0;margin:0;display:grid;gap:.7rem}
+  .creds li{
+    background:var(--surface);border:1px solid var(--line-soft);
+    border-radius:11px;padding:.95rem 1.05rem;font-size:.95rem;
+  }
+  .creds span{display:block;color:var(--muted);font-size:.87rem;margin-top:.2rem}
+
+  /* contact */
+  .contact{
+    margin:3.25rem 0 0;background:var(--indigo-50);
+    border:1px solid var(--indigo-200);border-radius:18px;padding:2rem 1.5rem;
+  }
+  .contact h2{
+    font-family:Archivo,sans-serif;font-weight:600;font-size:1.5rem;
+    letter-spacing:-0.02em;margin:0 0 .7rem;
+  }
+  .contact p{margin:0 0 1.35rem;max-width:31rem;font-size:1rem;color:var(--muted)}
+  .mail{
+    font-family:Archivo,sans-serif;font-weight:600;
+    font-size:clamp(1.05rem,4.4vw,1.35rem);letter-spacing:-0.02em;
+    color:var(--indigo-600);word-break:break-all;
+  }
+  footer{
+    padding:2.25rem 0 3rem;margin-top:2rem;border-top:1px solid var(--line);
+    color:var(--muted);font-size:.85rem;
+  }
+  footer .wrap{display:flex;flex-wrap:wrap;gap:.5rem 1.25rem;justify-content:space-between}
+  footer a{color:var(--muted)}
+
+  /* ============ load sequence ============ */
+  .rise{opacity:0;transform:translateY(12px)}
+  .ready .rise{animation:rise .62s cubic-bezier(.22,.8,.3,1) forwards}
+  .ready .rise:nth-child(1){animation-delay:.02s}
+  .ready .mark{animation-delay:0s}
+  .ready .r2{animation-delay:.09s}
+  .ready .r3{animation-delay:.17s}
+  .ready .r4{animation-delay:.25s}
+  .ready .r5{animation-delay:.33s}
+  @keyframes rise{to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .rise{opacity:1;transform:none;animation:none !important}
+    .btn:hover{transform:none}
+    .chev{transition:none}
+  }
+
+  /* ============ desktop ============ */
+  @media (min-width:48rem){
+    .hero{padding:5rem 0 3.5rem}
+    section{padding:4.25rem 0 0}
+    .also{grid-template-columns:1fr 1fr}
+    .stack{grid-template-columns:1fr 1fr}
+    .creds{grid-template-columns:1fr}
+    .contact{padding:2.6rem 2.2rem}
+    .svc .body{padding-right:3rem}
+  }
+  @media (min-width:64rem){
+    .stack{grid-template-columns:repeat(2,1fr);column-gap:2.5rem}
   }
 </style>
 </head>
 <body>
-<div class="wrap">
 
-<header>
-  <h1 class="name">António&nbsp;Abreu</h1>
-  <p class="pitch">Machine learning and software engineer who spent four years going from <em>building</em> systems to <em>leading</em> the teams that build them, and now runs multi-workstream technical programmes — owning both the engineering and the client relationship around it.</p>
-  <p class="locale">Freelance, based in Viseu, Portugal, working remotely. MSc in Computer Science and Engineering, Cum Laude. Teaching programming at ESTGV since 2023. Available for new engagements.</p>
+<header class="hero">
+  <div class="wrap">
+    <svg class="mark rise" viewBox="0 0 64 64" aria-hidden="true">
+      <g fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14 51 L32 13 L50 51"/>
+        <path d="M24.5 33.5 H39.5"/><path d="M22 40 H42"/><path d="M19.5 46.5 H44.5"/>
+      </g>
+    </svg>
+    <h1 class="rise r2">António Abreu</h1>
+    <p class="tagline rise r3">Project management and client success, built on a web3, machine learning and software engineering background.</p>
+    <p class="tagline-sub rise r4">I run multi-workstream technical programmes and own the client relationship around them — scoping the work, staffing it, and making sure what gets delivered is what was sold. Currently running ecosystem programmes and client accounts at OpenZeppelin, and teaching programming at ESTGV – Instituto Politécnico de Viseu.</p>
+    <div class="meta-row rise r5">
+      <span class="pill"><span class="dot"></span>Open to new engagements</span>
+      <span class="pill plain">Viseu, Portugal · remote</span>
+      <button class="btn" id="copy" type="button">Copy email</button>
+      <a class="btn ghost" href="https://www.linkedin.com/company/antonio-abreu-consulting">LinkedIn</a>
+      <span id="copied" role="status">Copied</span>
+    </div>
+  </div>
 </header>
 
-<section>
-  <h2>Services</h2>
-  <div class="services">
-
-    <div class="service">
-      <h3>Machine learning and AI engineering</h3>
-      <p>Model development and deployment end to end: computer vision, sequence models, remote sensing applications, and the MLOps around them. Four years building AI products, plus research work behind it.</p>
-    </div>
-
-    <div class="service">
-      <h3>Software engineering</h3>
-      <p>Backend services and data pipelines in Python — FastAPI, MongoDB, Kafka, Docker, GCP. Also architecture and design work when the question is what to build rather than how.</p>
-    </div>
-
-    <div class="service">
-      <h3>Technical leadership and project delivery</h3>
-      <p>Requirements analysis, feasibility studies, architecture decisions, agile delivery, stakeholder management. Planning, running and closing projects on scope, time and budget — including as the person the client talks to.</p>
-    </div>
-
-    <div class="service">
-      <h3>Web3 ecosystem programmes</h3>
-      <p>Running every workstream a protocol client needs at once: contract library and dApp development, security audits, research, tooling and documentation, grant deliverables, bug bounty programmes, and incident response. Scoping, estimation, staffing, and the coordination between reviewers, developers and the client's own team.</p>
-    </div>
-
-    <div class="service">
-      <h3>Client success and account ownership</h3>
-      <p>Owning the commercial relationship end to end: reading retainer health, shaping the service offering around what the client actually needs, authoring proposals and work orders, running renewals, producing quarterly reports, handling escalations — and pushing back with technical justification when a request conflicts with doing the work properly.</p>
-    </div>
-
-    <div class="service">
-      <h3>Websites and documentation</h3>
-      <p>Static sites, landing pages and documentation: built, deployed and handed over so you can maintain them. Fast, accessible, no CMS you did not ask for.</p>
-    </div>
-
-    <div class="service">
-      <h3>Teaching, training and mentoring</h3>
-      <p>Invited lecturer in programming at ESTGV – Instituto Politécnico de Viseu. Also team workshops and onboarding material on machine learning, software fundamentals and smart contract security.</p>
-    </div>
-
-  </div>
-</section>
-
-<section>
-  <h2>Current clients</h2>
-  <div class="track">
-
-    <div class="role">
-      <h3>OpenZeppelin</h3>
-      <p class="when">Customer Success Manager &middot; Project Manager, Ecosystems and OSS &nbsp;·&nbsp; 2025 &ndash; present</p>
-      <p>Owning protocol and ecosystem accounts end to end. Several concurrent clients, each with multiple parallel workstreams — library and dApp development, audits, research, tooling, grants and incident response — plus the commercial layer on top: estimation and staffing, service scoping, proposals and work orders, renewals, quarterly and executive reporting, and the recurring client calls and escalations that hold it together. Previously Project Manager, Ecosystems and OSS.</p>
-    </div>
-
-    <div class="role">
-      <h3>ESTGV &ndash; Instituto Polit&eacute;cnico de Viseu</h3>
-      <p class="when">Invited Lecturer &nbsp;·&nbsp; 2023 &ndash; present</p>
-      <p>Teaching programming to undergraduates.</p>
-    </div>
-
-  </div>
-</section>
-
-<section>
-  <h2>Previous experience</h2>
-  <div class="track">
-
-    <div class="role">
-      <h3>Zirak</h3>
-      <p class="when">Technical Lead &middot; Technical Project Manager &middot; Software Engineer &middot; Research Intern &nbsp;·&nbsp; 2021 &ndash; 2025</p>
-      <p>Four years across the whole arc, from research intern to technical lead. Drove technical direction and product design in AI and IoT, led the design and delivery of deep learning solutions, and built the platforms underneath them. Team management, architecture, requirements and feasibility work alongside the engineering.</p>
-    </div>
-
-  </div>
-</section>
-
-<section>
-  <h2>Research</h2>
-  <div class="track">
-
-    <div class="role">
-      <h3>Universidade da Beira Interior</h3>
-      <p class="when">Researcher &nbsp;·&nbsp; 2020 &ndash; 2024</p>
-      <p>Machine learning applied to remote sensing and industrial problems.</p>
-    </div>
-
-    <div class="role">
-      <h3>NOVA LINCS, NOVA School of Science and Technology</h3>
-      <p class="when">Researcher &nbsp;·&nbsp; 2021 &ndash; 2022</p>
-      <p>Machine learning research.</p>
-    </div>
-
-  </div>
-</section>
-
-<section>
-  <h2>Stack</h2>
-  <dl class="stack">
-    <dt>Languages</dt>
-    <dd>Python, Java, C, OCaml</dd>
-    <dt>Machine learning</dt>
-    <dd>PyTorch, TensorFlow, Keras, MLOps, computer vision, sequence models</dd>
-    <dt>Backend and infrastructure</dt>
-    <dd>FastAPI, MongoDB, Apache Kafka, Docker, Google Cloud Platform</dd>
-    <dt>Delivery and commercial tooling</dt>
-    <dd>Notion, Float, HubSpot, Slack, Git and GitHub</dd>
-  </dl>
-</section>
-
-<section>
-  <h2>Education and credentials</h2>
-  <ul class="credentials">
-    <li>MSc in Computer Science and Engineering, Universidade da Beira Interior — Cum Laude, 18/20
-      <span>Best student of the MSc cohort at the 2022 graduation</span></li>
-    <li>Erasmus+ Programme, Bialystok University of Technology, Poland</li>
-    <li>Deep Learning Specialization, DeepLearning.AI
-      <span>Including neural networks, hyperparameter tuning and optimisation, structuring ML projects, convolutional networks, and sequence models</span></li>
+<nav aria-label="Sections">
+  <ul>
+    <li><a href="#services">What I do</a></li>
+    <li><a href="#clients">Clients</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#stack">Stack</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
+</nav>
+
+<main>
+
+<section id="services">
+  <div class="wrap">
+    <h2 class="eyebrow">What I do</h2>
+    <p class="lede">Programme delivery and client ownership are the core. Tap any of the three to open it.</p>
+
+    <details class="svc" open>
+      <summary>
+        <span class="tint">01</span>
+        <span class="head">
+          <h3>Technical programme and delivery management<span class="badge">main focus</span></h3>
+          <p class="hint">Scoping, estimation, staffing, and closing on scope, time and budget.</p>
+        </span>
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <div class="body">
+        <p>Running programmes end to end: scoping engagements, producing and owning effort estimates, staffing them against real capacity, tracking deliverables against signed agreements, and closing them on scope, time and budget. Forecasting and quarterly planning, roadmap intelligence, executive and phase reports, delivery syncs, and reconciling what gets invoiced with what was actually delivered when a client and a supplier read the same contract differently.</p>
+      </div>
+    </details>
+
+    <details class="svc">
+      <summary>
+        <span class="tint">02</span>
+        <span class="head">
+          <h3>Client success and account ownership</h3>
+          <p class="hint">Owning the account rather than the ticket — including the commercial side.</p>
+        </span>
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <div class="body">
+        <p>Recurring client calls with agendas and follow-through, stakeholder rhythms tiered by seniority, request triage, escalations and post-incident conversations. On the commercial side — retainer health read as a signal rather than a number, shaping the service offering around what the client actually needs, proposals and work orders, renewals, and quarterly client reports. Including the part most people avoid: pushing back, with technical justification, when a request conflicts with doing the work properly.</p>
+      </div>
+    </details>
+
+    <details class="svc">
+      <summary>
+        <span class="tint">03</span>
+        <span class="head">
+          <h3>Web3 ecosystem programmes</h3>
+          <p class="hint">Several workstreams at once, for protocol clients.</p>
+        </span>
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <div class="body">
+        <p>The above, applied to protocol clients with several workstreams running at once: contract library and dApp development, security audits, research, tooling and documentation, grant deliverables, bug bounty programmes, and incident response — coordinated between reviewers, developers and the client's own team.</p>
+      </div>
+    </details>
+
+    <div class="also">
+      <div>
+        <h4>Machine learning and AI engineering</h4>
+        <p>Model development and deployment end to end: computer vision, sequence models, remote sensing applications, and the MLOps around them.</p>
+      </div>
+      <div>
+        <h4>Software engineering</h4>
+        <p>Backend services and data pipelines in Python. Architecture and design work when the question is what to build rather than how.</p>
+      </div>
+      <div>
+        <h4>Websites and documentation</h4>
+        <p>Static sites, landing pages and docs: built, deployed and handed over so you can maintain them yourself.</p>
+      </div>
+      <div>
+        <h4>Teaching, training and mentoring</h4>
+        <p>University lecturing, plus team workshops and onboarding material on ML, software fundamentals and smart contract security.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<div class="cta">
-  <h2>Let's talk</h2>
-  <p>I take on a small number of clients at a time, on retainer or per engagement, and I am happy to work under your own confidentiality terms.</p>
-  <a class="mail" href="mailto:REPLACE-WITH-YOUR-EMAIL">REPLACE-WITH-YOUR-EMAIL</a>
-</div>
+<section id="clients">
+  <div class="wrap">
+    <h2 class="eyebrow">Current clients</h2>
+    <div class="tl">
+      <div class="entry">
+        <p class="yr">2025 — now</p>
+        <h3>OpenZeppelin</h3>
+        <p class="who">Customer Success Manager · previously Project Manager, Ecosystems and OSS</p>
+        <p>Owning protocol and ecosystem accounts end to end. Several concurrent clients, each with multiple parallel workstreams — library and dApp development, audits, research, tooling, grants and incident response — plus the commercial layer on top: estimation and staffing, service scoping, proposals and work orders, renewals, quarterly and executive reporting, and the recurring client calls and escalations that hold it together.</p>
+      </div>
+      <div class="entry sage">
+        <p class="yr">2023 — now</p>
+        <h3>ESTGV – Instituto Politécnico de Viseu</h3>
+        <p class="who">Invited Lecturer</p>
+        <p>Teaching programming to undergraduates.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <h2 class="eyebrow">Previous experience</h2>
+    <div class="tl">
+      <div class="entry">
+        <p class="yr">2021 — 2025</p>
+        <h3>Zirak</h3>
+        <p class="who">Technical Lead · Technical Project Manager · Software Engineer · Research Intern</p>
+        <p>Four years across the whole arc, from research intern to technical lead. Drove technical direction and product design in AI and IoT, led the design and delivery of deep learning solutions, and built the platforms underneath them — with the team management, architecture, requirements and feasibility work alongside the engineering.</p>
+      </div>
+    </div>
+
+    <h2 class="eyebrow" style="margin-top:2.5rem">Research</h2>
+    <div class="tl">
+      <div class="entry lilac">
+        <p class="yr">2020 — 2024</p>
+        <h3>Universidade da Beira Interior</h3>
+        <p class="who">Researcher</p>
+        <p>Machine learning applied to remote sensing and industrial problems.</p>
+      </div>
+      <div class="entry lilac">
+        <p class="yr">2021 — 2022</p>
+        <h3>NOVA LINCS, NOVA School of Science and Technology</h3>
+        <p class="who">Researcher</p>
+        <p>Machine learning research.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="stack">
+  <div class="wrap">
+    <h2 class="eyebrow">Stack</h2>
+    <div class="stack">
+      <div>
+        <h4>Languages</h4>
+        <ul class="tags"><li>Python</li><li>Java</li><li>C</li><li>OCaml</li></ul>
+      </div>
+      <div>
+        <h4>Machine learning</h4>
+        <ul class="tags"><li>PyTorch</li><li>TensorFlow</li><li>Keras</li><li>MLOps</li><li>Computer vision</li><li>Sequence models</li></ul>
+      </div>
+      <div>
+        <h4>Backend and infrastructure</h4>
+        <ul class="tags"><li>FastAPI</li><li>MongoDB</li><li>Apache Kafka</li><li>Docker</li><li>Google Cloud Platform</li></ul>
+      </div>
+      <div>
+        <h4>Delivery and commercial</h4>
+        <ul class="tags"><li>Notion</li><li>Float</li><li>HubSpot</li><li>Slack</li><li>Git &amp; GitHub</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <h2 class="eyebrow">Education and credentials</h2>
+    <ul class="creds">
+      <li>MSc in Computer Science and Engineering, Universidade da Beira Interior — Cum Laude, 18/20
+        <span>Best student of the MSc cohort at the 2022 graduation</span></li>
+      <li>Erasmus+ Programme, Bialystok University of Technology, Poland</li>
+      <li>Deep Learning Specialization, DeepLearning.AI
+        <span>Neural networks, hyperparameter tuning and optimisation, structuring ML projects, convolutional networks, sequence models</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact">
+      <h2>Let's talk</h2>
+      <p>I take on a small number of clients at a time, on retainer or per engagement, and I am happy to work under your own confidentiality terms.</p>
+      <a class="mail" href="mailto:REPLACE-WITH-YOUR-EMAIL">REPLACE-WITH-YOUR-EMAIL</a>
+    </div>
+  </div>
+</section>
+
+</main>
 
 <footer>
-  <p>António Abreu · independent consultant, Viseu, Portugal · <a href="REPLACE-WITH-YOUR-LINKEDIN-PAGE-URL">LinkedIn</a></p>
+  <div class="wrap">
+    <span>António Abreu · independent consultant · Viseu, Portugal</span>
+    <a href="https://www.linkedin.com/company/antonio-abreu-consulting">LinkedIn</a>
+  </div>
 </footer>
 
-</div>
+<script>
+(function(){
+  document.body.classList.add('ready');
+
+  /* copy email */
+  var btn=document.getElementById('copy'), flag=document.getElementById('copied');
+  var mail=document.querySelector('.mail');
+  if(btn&&mail){
+    btn.addEventListener('click',function(){
+      var v=mail.textContent.trim();
+      var done=function(){flag.classList.add('on');setTimeout(function(){flag.classList.remove('on')},1800)};
+      if(navigator.clipboard&&navigator.clipboard.writeText){
+        navigator.clipboard.writeText(v).then(done).catch(function(){location.href='mailto:'+v});
+      }else{location.href='mailto:'+v}
+    });
+  }
+
+  /* scrollspy */
+  var links=[].slice.call(document.querySelectorAll('nav a'));
+  var map={};
+  links.forEach(function(a){
+    var el=document.querySelector(a.getAttribute('href'));
+    if(el)map[el.id]=a;
+  });
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        var a=map[e.target.id];
+        if(!a)return;
+        if(e.isIntersecting){
+          links.forEach(function(l){l.removeAttribute('aria-current')});
+          a.setAttribute('aria-current','true');
+        }
+      });
+    },{rootMargin:'-45% 0px -50% 0px'});
+    Object.keys(map).forEach(function(id){io.observe(document.getElementById(id))});
+  }
+})();
+</script>
 </body>
 </html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>António Abreu — Machine learning, software and technical delivery</title>
+<meta name="description" content="Freelance consultant in Viseu, Portugal. Machine learning and software engineering, technical leadership and project delivery, Web3 programme coordination, and programming taught at ESTGV.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Libre+Franklin:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F3F1EC;
+    --ink: #1A1917;
+    --muted: #5F5B54;
+    --rule: #D5D0C6;
+    --rule-soft: #E3DFD6;
+    --plum: #6B2737;
+    box-sizing: border-box;
+  }
+  *, *::before, *::after { box-sizing: inherit; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: "Libre Franklin", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 17px; line-height: 1.6;
+  }
+  .wrap { max-width: 46rem; margin: 0 auto; padding: 3.5rem 1.5rem 5rem; }
+
+  .name {
+    font-family: "Instrument Serif", Georgia, serif; font-weight: 400;
+    font-size: clamp(2.6rem, 11vw, 4.4rem); line-height: 0.98;
+    letter-spacing: -0.02em; margin: 0 0 1.4rem;
+  }
+  .pitch {
+    font-size: clamp(1.1rem, 3.4vw, 1.3rem); line-height: 1.45;
+    max-width: 31rem; margin: 0 0 1.5rem;
+  }
+  .pitch em { font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-size: 1.12em; }
+  .locale {
+    color: var(--muted); font-size: .92rem; margin: 0;
+    padding-top: 1.25rem; border-top: 1px solid var(--rule); max-width: 31rem;
+  }
+
+  section { margin-top: 4rem; }
+  h2 {
+    font-family: "Instrument Serif", Georgia, serif; font-weight: 400;
+    font-size: 1.9rem; letter-spacing: -0.01em; margin: 0 0 1.75rem;
+  }
+  p { margin: 0 0 1rem; max-width: 34rem; }
+  p:last-child { margin-bottom: 0; }
+
+  .services { display: grid; gap: 0; }
+  @media (min-width: 46rem) { .services { grid-template-columns: 1fr 1fr; column-gap: 2.5rem; } }
+  .service { padding: 1.4rem 0; border-top: 1px solid var(--rule-soft); }
+  .service h3 { font-size: 1.02rem; font-weight: 600; margin: 0 0 .45rem; }
+  .service p { font-size: .95rem; color: var(--muted); margin: 0; max-width: none; }
+
+  .track { border-left: 2px solid var(--rule); padding-left: 1.4rem; }
+  .role { margin-bottom: 1.6rem; }
+  .role:last-child { margin-bottom: 0; }
+  .role h3 { font-size: 1rem; font-weight: 600; margin: 0 0 .15rem; }
+  .role .when { color: var(--muted); font-size: .86rem; margin: 0 0 .4rem; }
+  .role p { font-size: .95rem; margin: 0; }
+
+  .stack { margin-top: 1.5rem; }
+  .stack dt {
+    font-size: .8rem; font-weight: 600; color: var(--muted);
+    margin-top: 1rem;
+  }
+  .stack dt:first-child { margin-top: 0; }
+  .stack dd { margin: .2rem 0 0; font-size: .95rem; }
+
+  .credentials { list-style: none; padding: 0; margin: 0; }
+  .credentials li {
+    padding: .85rem 0; border-top: 1px solid var(--rule-soft); font-size: .95rem;
+  }
+  .credentials li:first-child { border-top: none; padding-top: 0; }
+  .credentials span { color: var(--muted); display: block; font-size: .86rem; }
+
+  .cta { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--rule); }
+  .cta h2 { margin-bottom: 1.1rem; }
+  .cta p { font-size: 1.08rem; max-width: 32rem; }
+  a { color: var(--plum); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { color: var(--ink); }
+  a:focus-visible { outline: 2px solid var(--plum); outline-offset: 3px; }
+  .mail {
+    font-family: "Instrument Serif", Georgia, serif; font-size: 1.5rem;
+    display: inline-block; margin-top: .5rem; word-break: break-all;
+  }
+
+  footer {
+    margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--rule);
+    color: var(--muted); font-size: .86rem;
+  }
+  footer p { max-width: none; }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #171614; --ink: #EDEAE4; --muted: #9B958B;
+      --rule: #322F2A; --rule-soft: #262320; --plum: #D89AA6;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1 class="name">António&nbsp;Abreu</h1>
+  <p class="pitch">Machine learning and software engineer who spent four years going from <em>building</em> systems to <em>leading</em> the teams that build them, and now runs multi-workstream technical programmes — owning both the engineering and the client relationship around it.</p>
+  <p class="locale">Freelance, based in Viseu, Portugal, working remotely. MSc in Computer Science and Engineering, Cum Laude. Teaching programming at ESTGV since 2023. Available for new engagements.</p>
+</header>
+
+<section>
+  <h2>Services</h2>
+  <div class="services">
+
+    <div class="service">
+      <h3>Machine learning and AI engineering</h3>
+      <p>Model development and deployment end to end: computer vision, sequence models, remote sensing applications, and the MLOps around them. Four years building AI products, plus research work behind it.</p>
+    </div>
+
+    <div class="service">
+      <h3>Software engineering</h3>
+      <p>Backend services and data pipelines in Python — FastAPI, MongoDB, Kafka, Docker, GCP. Also architecture and design work when the question is what to build rather than how.</p>
+    </div>
+
+    <div class="service">
+      <h3>Technical leadership and project delivery</h3>
+      <p>Requirements analysis, feasibility studies, architecture decisions, agile delivery, stakeholder management. Planning, running and closing projects on scope, time and budget — including as the person the client talks to.</p>
+    </div>
+
+    <div class="service">
+      <h3>Web3 ecosystem programmes</h3>
+      <p>Running every workstream a protocol client needs at once: contract library and dApp development, security audits, research, tooling and documentation, grant deliverables, bug bounty programmes, and incident response. Scoping, estimation, staffing, and the coordination between reviewers, developers and the client's own team.</p>
+    </div>
+
+    <div class="service">
+      <h3>Client success and account ownership</h3>
+      <p>Owning the commercial relationship end to end: reading retainer health, shaping the service offering around what the client actually needs, authoring proposals and work orders, running renewals, producing quarterly reports, handling escalations — and pushing back with technical justification when a request conflicts with doing the work properly.</p>
+    </div>
+
+    <div class="service">
+      <h3>Websites and documentation</h3>
+      <p>Static sites, landing pages and documentation: built, deployed and handed over so you can maintain them. Fast, accessible, no CMS you did not ask for.</p>
+    </div>
+
+    <div class="service">
+      <h3>Teaching, training and mentoring</h3>
+      <p>Invited lecturer in programming at ESTGV – Instituto Politécnico de Viseu. Also team workshops and onboarding material on machine learning, software fundamentals and smart contract security.</p>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2>Current clients</h2>
+  <div class="track">
+
+    <div class="role">
+      <h3>OpenZeppelin</h3>
+      <p class="when">Customer Success Manager &middot; Project Manager, Ecosystems and OSS &nbsp;·&nbsp; 2025 &ndash; present</p>
+      <p>Owning protocol and ecosystem accounts end to end. Several concurrent clients, each with multiple parallel workstreams — library and dApp development, audits, research, tooling, grants and incident response — plus the commercial layer on top: estimation and staffing, service scoping, proposals and work orders, renewals, quarterly and executive reporting, and the recurring client calls and escalations that hold it together. Previously Project Manager, Ecosystems and OSS.</p>
+    </div>
+
+    <div class="role">
+      <h3>ESTGV &ndash; Instituto Polit&eacute;cnico de Viseu</h3>
+      <p class="when">Invited Lecturer &nbsp;·&nbsp; 2023 &ndash; present</p>
+      <p>Teaching programming to undergraduates.</p>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2>Previous experience</h2>
+  <div class="track">
+
+    <div class="role">
+      <h3>Zirak</h3>
+      <p class="when">Technical Lead &middot; Technical Project Manager &middot; Software Engineer &middot; Research Intern &nbsp;·&nbsp; 2021 &ndash; 2025</p>
+      <p>Four years across the whole arc, from research intern to technical lead. Drove technical direction and product design in AI and IoT, led the design and delivery of deep learning solutions, and built the platforms underneath them. Team management, architecture, requirements and feasibility work alongside the engineering.</p>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2>Research</h2>
+  <div class="track">
+
+    <div class="role">
+      <h3>Universidade da Beira Interior</h3>
+      <p class="when">Researcher &nbsp;·&nbsp; 2020 &ndash; 2024</p>
+      <p>Machine learning applied to remote sensing and industrial problems.</p>
+    </div>
+
+    <div class="role">
+      <h3>NOVA LINCS, NOVA School of Science and Technology</h3>
+      <p class="when">Researcher &nbsp;·&nbsp; 2021 &ndash; 2022</p>
+      <p>Machine learning research.</p>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2>Stack</h2>
+  <dl class="stack">
+    <dt>Languages</dt>
+    <dd>Python, Java, C, OCaml</dd>
+    <dt>Machine learning</dt>
+    <dd>PyTorch, TensorFlow, Keras, MLOps, computer vision, sequence models</dd>
+    <dt>Backend and infrastructure</dt>
+    <dd>FastAPI, MongoDB, Apache Kafka, Docker, Google Cloud Platform</dd>
+    <dt>Delivery and commercial tooling</dt>
+    <dd>Notion, Float, HubSpot, Slack, Git and GitHub</dd>
+  </dl>
+</section>
+
+<section>
+  <h2>Education and credentials</h2>
+  <ul class="credentials">
+    <li>MSc in Computer Science and Engineering, Universidade da Beira Interior — Cum Laude, 18/20
+      <span>Best student of the MSc cohort at the 2022 graduation</span></li>
+    <li>Erasmus+ Programme, Bialystok University of Technology, Poland</li>
+    <li>Deep Learning Specialization, DeepLearning.AI
+      <span>Including neural networks, hyperparameter tuning and optimisation, structuring ML projects, convolutional networks, and sequence models</span></li>
+  </ul>
+</section>
+
+<div class="cta">
+  <h2>Let's talk</h2>
+  <p>I take on a small number of clients at a time, on retainer or per engagement, and I am happy to work under your own confidentiality terms.</p>
+  <a class="mail" href="mailto:REPLACE-WITH-YOUR-EMAIL">REPLACE-WITH-YOUR-EMAIL</a>
+</div>
+
+<footer>
+  <p>António Abreu · independent consultant, Viseu, Portugal · <a href="REPLACE-WITH-YOUR-LINKEDIN-PAGE-URL">LinkedIn</a></p>
+</footer>
+
+</div>
+</body>
+</html>

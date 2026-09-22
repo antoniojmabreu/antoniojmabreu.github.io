@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>António Abreu — Technical programme delivery and client success</title>
-<meta name="description" content="Freelance consultant in Viseu, Portugal. Multi-workstream programme delivery and client account ownership, Web3 ecosystem programmes, machine learning and software engineering, and technical training.">
+<meta name="description" content="Client success and project management, built on a web3, machine learning and software engineering background. Multi-workstream programme delivery and client account ownership, Web3 ecosystem programmes, machine learning and software engineering, websites and technical training. Viseu, Portugal.">
 <link rel="icon" href="logo.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,6 +27,7 @@
     --mark-blue:#253166;
     --accent:var(--indigo-600);
     --radius:14px;
+    interpolate-size:allow-keywords;
     box-sizing:border-box;
   }
   @media (prefers-color-scheme:dark){
@@ -55,7 +56,7 @@
   a:focus-visible,button:focus-visible,summary:focus-visible{
     outline:2px solid var(--accent);outline-offset:3px;border-radius:6px
   }
-  .wrap{max-width:60rem;margin:0 auto;padding:0 1.35rem}
+  .wrap{max-width:64rem;margin:0 auto;padding:0 1.35rem}
 
   /* ============ hero ============ */
   .hero{position:relative;overflow:hidden;padding:3.25rem 0 2.75rem}
@@ -72,9 +73,17 @@
     background:radial-gradient(circle,var(--sage-200),transparent 68%);opacity:.5;
   }
   .hero .wrap{position:relative;z-index:1}
-  .mark{display:block;width:4rem;height:3.37rem;margin-bottom:1.4rem}
+  .mark{display:block;width:6.2rem;height:5.22rem;margin-bottom:0;flex:0 0 auto}
   .mark .letter{stroke:var(--mark-ink)}
   .mark .rails{stroke:var(--mark-blue)}
+  .mark path{stroke-dasharray:64;stroke-dashoffset:64}
+  .ready .mark .letter path{animation:draw .72s ease forwards}
+  .ready .mark .letter path:nth-child(2){animation-delay:.17s}
+  .ready .mark .rails path{animation:draw .5s ease forwards}
+  .ready .mark .rails path:nth-child(1){animation-delay:.52s}
+  .ready .mark .rails path:nth-child(2){animation-delay:.65s}
+  .ready .mark .rails path:nth-child(3){animation-delay:.78s}
+  @keyframes draw{to{stroke-dashoffset:0}}
   h1{margin:0 0 1.1rem;font-weight:400}
   h1 .wm{
     display:block;font-family:Archivo,system-ui,sans-serif;font-weight:700;
@@ -91,14 +100,25 @@
     letter-spacing:-0.012em;margin:0 0 1rem;max-width:33rem;
   }
   .tagline-sub{color:var(--muted);margin:0 0 1.75rem;max-width:33rem;font-size:.98rem}
-  .meta-row{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center}
-  .pill{
-    display:inline-flex;align-items:center;gap:.45rem;
-    font-size:.86rem;font-weight:500;padding:.4rem .85rem;border-radius:99px;
-    background:var(--sage-50);color:var(--sage-600);border:1px solid var(--sage-200);
+  .hero-side{margin-top:2.25rem;padding-top:1.6rem;border-top:1px solid var(--line)}
+  .hero-side dl{margin:0}
+  .hero-side dt{
+    font-family:Archivo,system-ui,sans-serif;
+    font-size:.86rem;font-weight:600;letter-spacing:.01em;color:var(--indigo-600);
+    margin-top:1.6rem;padding-bottom:.45rem;border-bottom:1px solid var(--line);
   }
-  .pill .dot{width:.45rem;height:.45rem;border-radius:50%;background:currentColor}
-  .pill.plain{background:var(--surface);color:var(--muted);border-color:var(--line)}
+  .hero-side dt:first-of-type{margin-top:0}
+  .hero-side dd{margin:.55rem 0 0;font-size:.97rem}
+  .sidebtns{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.5rem}
+  .sidebtns .btn{
+    justify-content:center;font-size:.85rem;padding:.5rem .95rem;
+    max-width:100%;overflow-wrap:anywhere;
+  }
+  .pill{
+    display:inline-flex;align-items:center;
+    font-size:.86rem;font-weight:500;padding:.4rem .85rem;border-radius:99px;
+    background:var(--surface);color:var(--muted);border:1px solid var(--line);
+  }
   .btn{
     display:inline-flex;align-items:center;gap:.45rem;cursor:pointer;
     font-family:inherit;font-size:.9rem;font-weight:600;
@@ -109,8 +129,6 @@
   .btn:hover{transform:translateY(-1px);opacity:.9;color:var(--ground)}
   .btn.ghost{background:var(--surface);color:var(--ink);border-color:var(--line)}
   .btn.ghost:hover{border-color:var(--accent);color:var(--accent)}
-  #copied{font-size:.84rem;color:var(--sage-600);opacity:0;transition:opacity .2s ease}
-  #copied.on{opacity:1}
 
   /* ============ sticky nav ============ */
   nav{
@@ -120,8 +138,8 @@
   }
   @supports not (backdrop-filter:blur(2px)){nav{background:var(--ground)}}
   nav ul{
-    display:flex;gap:.25rem;list-style:none;margin:0;padding:.55rem 1.35rem;
-    overflow-x:auto;scrollbar-width:none;max-width:60rem;margin:0 auto;
+    display:flex;gap:.25rem;list-style:none;margin:0 auto;padding:.55rem 1.35rem;
+    overflow-x:auto;scrollbar-width:none;max-width:64rem;
   }
   nav ul::-webkit-scrollbar{display:none}
   nav a{
@@ -131,6 +149,21 @@
   }
   nav a:hover{color:var(--ink)}
   nav a[aria-current="true"]{background:var(--indigo-50);color:var(--indigo-600)}
+  .topbar{
+    display:flex;align-items:flex-start;justify-content:space-between;
+    gap:1rem;margin-bottom:1.4rem;
+  }
+  .lang{
+    display:flex;gap:2px;flex:0 0 auto;
+    background:var(--line-soft);border-radius:99px;padding:2px;
+  }
+  .lang button{
+    font-family:inherit;font-size:.76rem;font-weight:600;letter-spacing:.02em;
+    border:none;background:transparent;color:var(--muted);cursor:pointer;
+    padding:.28rem .6rem;border-radius:99px;transition:background .15s ease,color .15s ease;
+  }
+  .lang button:hover{color:var(--ink)}
+  .lang button[aria-pressed="true"]{background:var(--surface);color:var(--indigo-600)}
 
   /* ============ sections ============ */
   section{padding:3.25rem 0 0}
@@ -154,13 +187,10 @@
   }
   .svc > summary::-webkit-details-marker{display:none}
   .svc .tint{
-    flex:0 0 auto;width:2.1rem;height:2.1rem;border-radius:9px;
-    display:grid;place-items:center;font-family:Archivo,sans-serif;
-    font-weight:700;font-size:.82rem;letter-spacing:-.02em;
+    flex:0 0 auto;width:.62rem;height:2.4rem;border-radius:99px;margin-top:.22rem;
   }
-  .svc:nth-of-type(1) .tint{background:var(--indigo-50);color:var(--indigo-600)}
-  .svc:nth-of-type(2) .tint{background:var(--sage-50);color:var(--sage-600)}
-  .svc:nth-of-type(3) .tint{background:var(--apricot-50);color:var(--apricot-600)}
+  .svc:nth-of-type(1) .tint{background:var(--indigo-600)}
+  .svc:nth-of-type(2) .tint{background:var(--apricot-600)}
   .svc .head{flex:1;min-width:0}
   .svc h3{
     font-family:Archivo,system-ui,sans-serif;font-weight:600;
@@ -174,18 +204,32 @@
   }
   .chev{
     flex:0 0 auto;width:1.1rem;height:1.1rem;margin-top:.4rem;color:var(--muted);
-    transition:transform .2s ease;
+    transition:transform .4s cubic-bezier(.22,.8,.3,1);
   }
   .svc[open] .chev{transform:rotate(180deg)}
-  .svc .body{padding:0 1.2rem 1.25rem 4.15rem}
-  .svc .body p{margin:0;font-size:.95rem;color:var(--muted)}
+  .svc .body{padding:0 1.2rem 1.25rem 2.7rem}
+  .svc::details-content{
+    block-size:0;overflow:hidden;opacity:0;
+    transition:
+      block-size .52s cubic-bezier(.22,.8,.3,1),
+      opacity .4s ease,
+      content-visibility .52s allow-discrete;
+  }
+  .svc[open]::details-content{block-size:auto;opacity:1}
+  .svc .body p{margin:0 0 .8rem;font-size:.95rem;color:var(--muted)}
+  .svc .body p:last-child{margin-bottom:0}
 
   /* secondary services */
   .also{display:grid;gap:.7rem;margin-top:1.4rem}
   .also > div{
     background:var(--surface);border:1px solid var(--line-soft);
-    border-radius:11px;padding:.95rem 1.05rem;
+    border-top:2px solid var(--lilac-200);
+    border-radius:11px;padding:.9rem 1.05rem 1rem;
   }
+  .also > div:nth-child(1){border-top-color:var(--indigo-200)}
+  .also > div:nth-child(2){border-top-color:var(--sage-200)}
+  .also > div:nth-child(3){border-top-color:var(--apricot-200)}
+  .also > div:nth-child(4){border-top-color:var(--lilac-200)}
   .also h4{font-size:.95rem;font-weight:600;margin:0 0 .2rem}
   .also p{margin:0;font-size:.89rem;color:var(--muted)}
 
@@ -196,6 +240,11 @@
     border-left:3px solid var(--indigo-200);
     border-radius:0 var(--radius) var(--radius) 0;padding:1.1rem 1.2rem;
   }
+  #clients .entry{padding:1.5rem 1.4rem;border-left-width:4px}
+  #clients .entry h3{font-size:1.16rem}
+  #clients .entry p:last-child{font-size:.97rem}
+  #clients{padding-bottom:.6rem}
+  #experience{padding-top:4rem}
   .entry.sage{border-left-color:var(--sage-200)}
   .entry.lilac{border-left-color:var(--lilac-200)}
   .entry .yr{
@@ -210,19 +259,18 @@
   .entry p:last-child{margin:0;font-size:.94rem}
 
   /* stack */
-  .stack{display:grid;gap:1.25rem}
+  .stack{display:grid;gap:.7rem}
   .stack h4{
-    font-size:.74rem;font-weight:600;letter-spacing:.05em;
-    color:var(--muted);margin:0 0 .5rem;
+    font-size:.78rem;font-weight:600;letter-spacing:.04em;margin:0 0 .35rem;
   }
-  .tags{display:flex;flex-wrap:wrap;gap:.35rem;margin:0;padding:0;list-style:none}
-  .tags li{
-    font-size:.84rem;padding:.25rem .65rem;border-radius:7px;
-    background:var(--indigo-50);color:var(--indigo-600);
+  .stack > div{
+    background:var(--surface);border:1px solid var(--line-soft);
+    border-radius:12px;padding:1.1rem 1.2rem;
   }
-  .stack div:nth-child(2) .tags li{background:var(--sage-50);color:var(--sage-600)}
-  .stack div:nth-child(3) .tags li{background:var(--apricot-50);color:var(--apricot-600)}
-  .stack div:nth-child(4) .tags li{background:var(--lilac-50);color:var(--lilac-600)}
+  .stack .v{margin:0;font-size:1rem;line-height:1.5}
+  .stack > div:nth-child(1) h4{color:var(--indigo-600)}
+  .stack > div:nth-child(2) h4{color:var(--sage-600)}
+  .stack > div:nth-child(3) h4{color:var(--apricot-600)}
 
   /* credentials */
   .creds{list-style:none;padding:0;margin:0;display:grid;gap:.7rem}
@@ -253,6 +301,13 @@
   }
   footer .wrap{display:flex;flex-wrap:wrap;gap:.5rem 1.25rem;justify-content:space-between}
   footer a{color:var(--muted)}
+  .flinks{display:flex;flex-wrap:wrap;gap:.4rem 1.1rem}
+  .flockup{display:block;width:13rem;height:2.52rem;flex:0 0 auto}
+  .flockup .letter{stroke:var(--mark-ink)}
+  .flockup .rails{stroke:var(--mark-blue)}
+  .flockup .lk-name{fill:var(--ink)}
+  .flockup .lk-sub{fill:var(--mark-blue)}
+  footer .wrap{align-items:center}
 
   /* ============ load sequence ============ */
   .rise{opacity:0;transform:translateY(12px)}
@@ -267,11 +322,29 @@
   @media (prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
     .rise{opacity:1;transform:none;animation:none !important}
+    .mark path{stroke-dashoffset:0 !important;animation:none !important}
     .btn:hover{transform:none}
     .chev{transition:none}
+    .svc::details-content,.svc[open]::details-content{
+      block-size:auto;opacity:1;overflow:visible;transition:none;
+    }
   }
 
   /* ============ desktop ============ */
+  @media (min-width:58rem){
+    .hero .wrap{
+      display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.62fr);
+      column-gap:4rem;align-items:start;
+    }
+    .topbar{grid-column:1 / -1}
+    .hero-main{grid-column:1}
+    .hero-side{
+      grid-column:2;margin-top:.6rem;padding-top:0;border-top:none;
+      border-left:1px solid var(--line);padding-left:2.2rem;
+    }
+    .sidebtns{flex-direction:column;align-items:stretch}
+    .tagline,.tagline-sub{max-width:none}
+  }
   @media (min-width:48rem){
     .hero{padding:5rem 0 3.5rem}
     section{padding:4.25rem 0 0}
@@ -290,7 +363,8 @@
 
 <header class="hero">
   <div class="wrap">
-    <svg class="mark rise" viewBox="0 0 76 64" aria-hidden="true">
+    <div class="topbar">
+    <svg class="mark" viewBox="0 0 76 64" aria-hidden="true">
       <g fill="none" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round">
         <g class="rails">
           <path d="M18.7 29 H52"/><path d="M15.0 38 H60"/><path d="M11.3 47 H68"/>
@@ -300,27 +374,39 @@
         </g>
       </g>
     </svg>
-    <h1 class="rise r2"><span class="wm">António Abreu</span><span class="wm-sub">Consulting</span></h1>
-    <p class="tagline rise r3">Project management and client success, built on a web3, machine learning and software engineering background.</p>
-    <p class="tagline-sub rise r4">I run multi-workstream technical programmes and own the client relationship around them — scoping the work, staffing it, and making sure what gets delivered is what was sold. Currently running ecosystem programmes and client accounts at OpenZeppelin, and teaching programming at ESTGV – Instituto Politécnico de Viseu.</p>
-    <div class="meta-row rise r5">
-      <span class="pill"><span class="dot"></span>Open to new engagements</span>
-      <span class="pill plain">Viseu, Portugal · remote</span>
-      <button class="btn" id="copy" type="button">Copy email</button>
-      <a class="btn ghost" href="https://www.linkedin.com/company/antonio-abreu-consulting">LinkedIn</a>
-      <span id="copied" role="status">Copied</span>
+      <div class="lang rise" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="pt" aria-pressed="false">PT</button>
+      </div>
     </div>
+    <div class="hero-main">
+    <h1 class="rise r2"><span class="wm">António Abreu</span><span class="wm-sub">Consulting</span></h1>
+    <p class="tagline rise r3" data-pt="Sucesso do cliente e gestão de projeto, assente numa base de web3, machine learning e engenharia de software.">Client success and project management, built on a web3, machine learning and software engineering background.</p>
+    <p class="tagline-sub rise r4" data-pt="Atualmente a gerir programas de ecossistema e contas de cliente na OpenZeppelin, e a lecionar programação, IA, visão computacional e tecnologias de backend na ESTGV – Instituto Politécnico de Viseu. Antes disso, quatro anos a construir e a liderar equipas de engenharia em IA e IoT.">Currently running ecosystem programmes and client accounts at OpenZeppelin, and lecturing in programming, AI, computer vision and backend technologies at ESTGV – Instituto Politécnico de Viseu. Before that, four years building and leading AI and IoT engineering teams.</p>
+    </div>
+
+    <aside class="hero-side rise r5">
+      <dl>
+        <dt data-pt="Onde estou">Based in</dt>
+        <dd data-pt="Viseu, Portugal · remoto">Viseu, Portugal · remote</dd>
+        <dt data-pt="Noutros sítios">Elsewhere</dt>
+        <dd class="sidebtns">
+          <a class="btn ghost" href="https://www.linkedin.com/company/antonio-abreu-consulting" data-pt="LinkedIn do negócio">Business LinkedIn</a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/ant%C3%B3nio-abreu-332023160/" data-pt="LinkedIn pessoal">Personal LinkedIn</a>
+        </dd>
+      </dl>
+    </aside>
   </div>
 </header>
 
 <nav aria-label="Sections">
-  <ul>
-    <li><a href="#services">What I do</a></li>
-    <li><a href="#clients">Clients</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#stack">Stack</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#contact">Contact</a></li>
+  <ul id="navlist">
+    <li><a href="#services" data-pt="Serviços">What I do</a></li>
+    <li><a href="#clients" data-pt="Clientes">Clients</a></li>
+    <li><a href="#experience" data-pt="Percurso">Experience</a></li>
+    <li><a href="#stack" data-pt="Tecnologias">Stack</a></li>
+    <li><a href="#education" data-pt="Formação">Education</a></li>
+    <li><a href="#contact" data-pt="Contacto">Contact</a></li>
   </ul>
 </nav>
 
@@ -328,67 +414,54 @@
 
 <section id="services">
   <div class="wrap">
-    <h2 class="eyebrow">What I do</h2>
-    <p class="lede">Programme delivery and client ownership are the core. Tap any of the three to open it.</p>
+    <h2 class="eyebrow" data-pt="O que faço">What I do</h2>
+    <p class="lede" data-pt="A gestão de entregas e a relação com o cliente são o núcleo, e andam juntas. Toque em qualquer um para abrir.">Delivery and the client relationship are the core, and they travel together. Tap either to open it.</p>
 
-    <details class="svc" open>
+    <details class="svc" name="services">
       <summary>
-        <span class="tint">01</span>
+        <span class="tint" aria-hidden="true"></span>
         <span class="head">
-          <h3>Technical programme and delivery management<span class="badge">main focus</span></h3>
-          <p class="hint">Scoping, estimation, staffing, and closing on scope, time and budget.</p>
+          <h3 data-pt='Gestão de entregas e da relação com o cliente<span class="badge">atividade principal</span>'>Programme delivery and client ownership<span class="badge">main focus</span></h3>
+          <p class="hint" data-pt="Âmbito, estimativas e alocação de pessoas — e a conta, do lado comercial, a par disso.">Scoping, estimation and staffing — and the account, commercial side included, alongside it.</p>
         </span>
         <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
       </summary>
       <div class="body">
-        <p>Running programmes end to end: scoping engagements, producing and owning effort estimates, staffing them against real capacity, tracking deliverables against signed agreements, and closing them on scope, time and budget. Forecasting and quarterly planning, roadmap intelligence, executive and phase reports, delivery syncs, and reconciling what gets invoiced with what was actually delivered when a client and a supplier read the same contract differently.</p>
+        <p data-pt="Do lado da entrega: definição de âmbito, produção e responsabilidade pelas estimativas de esforço, alocação de pessoas face à capacidade real, acompanhamento das entregas contra os contratos assinados, previsão e planeamento trimestral, leitura de roadmap, relatórios executivos e de fase, e reuniões de acompanhamento.">On the delivery side: scoping engagements, producing and owning effort estimates, staffing them against real capacity, tracking deliverables against signed agreements, forecasting and quarterly planning, roadmap intelligence, executive and phase reports, and delivery syncs.</p>
+        <p data-pt="Do lado do cliente: reuniões regulares com agenda e seguimento, ritmos de contacto ajustados à senioridade de cada interlocutor, triagem de pedidos, escalações e conversas após incidentes; saúde do retainer lida como sinal e não como número, desenho da oferta em torno do que o cliente precisa, propostas e ordens de trabalho, renovações e relatórios trimestrais.">On the client side: recurring calls with agendas and follow-through, stakeholder rhythms tiered by seniority, request triage, escalations and post-incident conversations; retainer health read as a signal rather than a number, shaping the service offering around what the client actually needs, proposals and work orders, renewals, and quarterly client reports.</p>
+        <p data-pt="As duas metades andam juntas — é o mesmo trabalho. A reconciliação entre o que é faturado e o que foi efetivamente entregue só se resolve bem quando quem acompanha as entregas é também quem fala com o cliente. Incluindo a parte que a maioria evita: contrapor, com justificação técnica, quando um pedido colide com fazer o trabalho bem.">The two halves travel together — it is one job. Reconciling what gets invoiced with what was actually delivered only works when the person tracking the deliverables is also the person the client talks to. Including the part most people avoid: pushing back, with technical justification, when a request conflicts with doing the work properly.</p>
       </div>
     </details>
-
-    <details class="svc">
+    <details class="svc" name="services">
       <summary>
-        <span class="tint">02</span>
+        <span class="tint" aria-hidden="true"></span>
         <span class="head">
-          <h3>Client success and account ownership</h3>
-          <p class="hint">Owning the account rather than the ticket — including the commercial side.</p>
+          <h3 data-pt="Programas de ecossistema web3">Web3 ecosystem programmes</h3>
+          <p class="hint" data-pt="Várias frentes em simultâneo, para clientes de protocolo.">Several workstreams at once, for protocol clients.</p>
         </span>
         <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
       </summary>
       <div class="body">
-        <p>Recurring client calls with agendas and follow-through, stakeholder rhythms tiered by seniority, request triage, escalations and post-incident conversations. On the commercial side — retainer health read as a signal rather than a number, shaping the service offering around what the client actually needs, proposals and work orders, renewals, and quarterly client reports. Including the part most people avoid: pushing back, with technical justification, when a request conflicts with doing the work properly.</p>
-      </div>
-    </details>
-
-    <details class="svc">
-      <summary>
-        <span class="tint">03</span>
-        <span class="head">
-          <h3>Web3 ecosystem programmes</h3>
-          <p class="hint">Several workstreams at once, for protocol clients.</p>
-        </span>
-        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-      </summary>
-      <div class="body">
-        <p>The above, applied to protocol clients with several workstreams running at once: contract library and dApp development, security audits, research, tooling and documentation, grant deliverables, bug bounty programmes, and incident response — coordinated between reviewers, developers and the client's own team.</p>
+        <p data-pt="O mesmo trabalho de entrega e de conta, aplicado a clientes de protocolo com várias frentes em simultâneo: desenvolvimento de bibliotecas de contratos e de dApps, auditorias de segurança, investigação, ferramentas e documentação, entregas de grants, programas de bug bounty e resposta a incidentes — coordenados entre auditores, programadores e a equipa do próprio cliente.">The same delivery and account work, applied to protocol clients running several workstreams at once: contract library and dApp development, security audits, research, tooling and documentation, grant deliverables, bug bounty programmes, and incident response — coordinated between reviewers, developers and the client's own team.</p>
       </div>
     </details>
 
     <div class="also">
       <div>
-        <h4>Machine learning and AI engineering</h4>
-        <p>Model development and deployment end to end: computer vision, sequence models, remote sensing applications, and the MLOps around them.</p>
+        <h4 data-pt="Machine learning e engenharia de IA">Machine learning and AI engineering</h4>
+        <p data-pt="Desenvolvimento e colocação de modelos em produção: visão computacional, modelos de sequência, aplicações de deteção remota e o MLOps à volta disso.">Model development and deployment end to end: computer vision, sequence models, remote sensing applications, and the MLOps around them.</p>
       </div>
       <div>
-        <h4>Software engineering</h4>
-        <p>Backend services and data pipelines in Python. Architecture and design work when the question is what to build rather than how.</p>
+        <h4 data-pt="Engenharia de software">Software engineering</h4>
+        <p data-pt="Serviços de backend e pipelines de dados em Python. Arquitetura e desenho quando a questão é o que construir e não como.">Backend services and data pipelines in Python. Architecture and design work when the question is what to build rather than how.</p>
       </div>
       <div>
-        <h4>Websites and documentation</h4>
-        <p>Static sites, landing pages and docs: built, deployed and handed over so you can maintain them yourself.</p>
+        <h4 data-pt="Websites e documentação">Websites and documentation</h4>
+        <p data-pt="Sites estáticos, landing pages e documentação: construídos, publicados e entregues para poder mantê-los por si próprio.">Static sites, landing pages and docs: built, deployed and handed over so you can maintain them yourself.</p>
       </div>
       <div>
-        <h4>Teaching, training and mentoring</h4>
-        <p>University lecturing, plus team workshops and onboarding material on ML, software fundamentals and smart contract security.</p>
+        <h4 data-pt="Ensino, formação e mentoria">Teaching, training and mentoring</h4>
+        <p data-pt="Docência universitária em programação, IA, visão computacional e tecnologias de backend, incluindo laboratórios práticos de robótica. Mais workshops para equipas e material de onboarding sobre ML, fundamentos de software e segurança de smart contracts.">University lecturing in programming, AI, computer vision and backend technologies, including hands-on robotics labs. Also team workshops and onboarding material on ML, software fundamentals and smart contract security.</p>
       </div>
     </div>
   </div>
@@ -396,19 +469,19 @@
 
 <section id="clients">
   <div class="wrap">
-    <h2 class="eyebrow">Current clients</h2>
+    <h2 class="eyebrow" data-pt="Clientes atuais">Current clients</h2>
     <div class="tl">
       <div class="entry">
         <p class="yr">2025 — now</p>
         <h3>OpenZeppelin</h3>
         <p class="who">Customer Success Manager · previously Project Manager, Ecosystems and OSS</p>
-        <p>Owning protocol and ecosystem accounts end to end. Several concurrent clients, each with multiple parallel workstreams — library and dApp development, audits, research, tooling, grants and incident response — plus the commercial layer on top: estimation and staffing, service scoping, proposals and work orders, renewals, quarterly and executive reporting, and the recurring client calls and escalations that hold it together.</p>
+        <p data-pt="Responsável por contas de protocolo e ecossistema de ponta a ponta. Vários clientes em simultâneo, cada um com múltiplas frentes em paralelo — desenvolvimento de bibliotecas e dApps, auditorias, investigação, ferramentas, grants e resposta a incidentes — mais a camada comercial por cima: estimativas e alocação, desenho do serviço, propostas e ordens de trabalho, renovações, relatórios trimestrais e executivos, e as reuniões e escalações que mantêm tudo de pé.">Owning protocol and ecosystem accounts end to end. Several concurrent clients, each with multiple parallel workstreams — library and dApp development, audits, research, tooling, grants and incident response — plus the commercial layer on top: estimation and staffing, service scoping, proposals and work orders, renewals, quarterly and executive reporting, and the recurring client calls and escalations that hold it together.</p>
       </div>
       <div class="entry sage">
         <p class="yr">2023 — now</p>
         <h3>ESTGV – Instituto Politécnico de Viseu</h3>
-        <p class="who">Invited Lecturer</p>
-        <p>Teaching programming to undergraduates.</p>
+        <p class="who" data-pt="Docente convidado">Invited Lecturer</p>
+        <p data-pt="Docência em fundamentos de programação, programação orientada a objetos, inteligência artificial, visão computacional e tecnologias de backend. Conduzo também as aulas de laboratório, orientando alunos que desenham e constroem robótica assente em IA — drones, humanoides e rovers — aplicada a problemas reais da indústria e a levantamentos ambientais.">Lecturing across programming fundamentals, object-oriented programming, artificial intelligence, computer vision and backend technologies. I also run the hands-on laboratory sessions, mentoring students who design and build AI-powered robotics — drones, humanoids and rovers — against real industrial and environmental-survey problems.</p>
       </div>
     </div>
   </div>
@@ -416,29 +489,13 @@
 
 <section id="experience">
   <div class="wrap">
-    <h2 class="eyebrow">Previous experience</h2>
+    <h2 class="eyebrow" data-pt="Percurso anterior">Previous experience</h2>
     <div class="tl">
       <div class="entry">
         <p class="yr">2021 — 2025</p>
         <h3>Zirak</h3>
         <p class="who">Technical Lead · Technical Project Manager · Software Engineer · Research Intern</p>
-        <p>Four years across the whole arc, from research intern to technical lead. Drove technical direction and product design in AI and IoT, led the design and delivery of deep learning solutions, and built the platforms underneath them — with the team management, architecture, requirements and feasibility work alongside the engineering.</p>
-      </div>
-    </div>
-
-    <h2 class="eyebrow" style="margin-top:2.5rem">Research</h2>
-    <div class="tl">
-      <div class="entry lilac">
-        <p class="yr">2020 — 2024</p>
-        <h3>Universidade da Beira Interior</h3>
-        <p class="who">Researcher</p>
-        <p>Machine learning applied to remote sensing and industrial problems.</p>
-      </div>
-      <div class="entry lilac">
-        <p class="yr">2021 — 2022</p>
-        <h3>NOVA LINCS, NOVA School of Science and Technology</h3>
-        <p class="who">Researcher</p>
-        <p>Machine learning research.</p>
+        <p data-pt="Quatro anos a percorrer todo o arco, de estagiário de investigação a technical lead. Conduzi a direção técnica e o desenho de produto em IA e IoT, liderei o desenho e a entrega de soluções de deep learning, e construí as plataformas por baixo — com a gestão de equipa, arquitetura, levantamento de requisitos e estudos de viabilidade a par da engenharia.">Four years across the whole arc, from research intern to technical lead. Drove technical direction and product design in AI and IoT, led the design and delivery of deep learning solutions, and built the platforms underneath them — with the team management, architecture, requirements and feasibility work alongside the engineering.</p>
       </div>
     </div>
   </div>
@@ -446,23 +503,19 @@
 
 <section id="stack">
   <div class="wrap">
-    <h2 class="eyebrow">Stack</h2>
+    <h2 class="eyebrow" data-pt="Tecnologias">Stack</h2>
     <div class="stack">
       <div>
-        <h4>Languages</h4>
-        <ul class="tags"><li>Python</li><li>Java</li><li>C</li><li>OCaml</li></ul>
+        <h4 data-pt="Linguagens">Languages</h4>
+        <p class="v">Python, Java, C, OCaml</p>
       </div>
       <div>
-        <h4>Machine learning</h4>
-        <ul class="tags"><li>PyTorch</li><li>TensorFlow</li><li>Keras</li><li>MLOps</li><li>Computer vision</li><li>Sequence models</li></ul>
+        <h4 data-pt="Machine learning">Machine learning</h4>
+        <p class="v">PyTorch, TensorFlow, Keras, MLOps, Computer vision, Sequence models</p>
       </div>
       <div>
-        <h4>Backend and infrastructure</h4>
-        <ul class="tags"><li>FastAPI</li><li>MongoDB</li><li>Apache Kafka</li><li>Docker</li><li>Google Cloud Platform</li></ul>
-      </div>
-      <div>
-        <h4>Delivery and commercial</h4>
-        <ul class="tags"><li>Notion</li><li>Float</li><li>HubSpot</li><li>Slack</li><li>Git &amp; GitHub</li></ul>
+        <h4 data-pt="Backend e infraestrutura">Backend and infrastructure</h4>
+        <p class="v">FastAPI, MongoDB, Apache Kafka, Docker, Google Cloud Platform</p>
       </div>
     </div>
   </div>
@@ -470,12 +523,13 @@
 
 <section id="education">
   <div class="wrap">
-    <h2 class="eyebrow">Education and credentials</h2>
+    <h2 class="eyebrow" data-pt="Formação e credenciais">Education and credentials</h2>
     <ul class="creds">
-      <li>MSc in Computer Science and Engineering, Universidade da Beira Interior — Cum Laude, 18/20
+      <li data-pt="Mestrado em Engenharia Informática, Universidade da Beira Interior — Cum Laude, 18/20&lt;span&gt;Melhor aluno do mestrado na cerimónia de 2022&lt;/span&gt;">MSc in Computer Science and Engineering, Universidade da Beira Interior — Cum Laude, 18/20
         <span>Best student of the MSc cohort at the 2022 graduation</span></li>
-      <li>Erasmus+ Programme, Bialystok University of Technology, Poland</li>
-      <li>Deep Learning Specialization, DeepLearning.AI
+      <li data-pt="Investigação em machine learning, 2020–2024&lt;span&gt;Universidade da Beira Interior — ML aplicado a deteção remota e a problemas industriais · NOVA LINCS, NOVA School of Science and Technology&lt;/span&gt;">Machine learning research, 2020–2024
+        <span>Universidade da Beira Interior — ML applied to remote sensing and industrial problems · NOVA LINCS, NOVA School of Science and Technology</span></li>
+      <li data-pt="Deep Learning Specialization, DeepLearning.AI&lt;span&gt;Redes neuronais, afinação de hiperparâmetros e otimização, estruturação de projetos de ML, redes convolucionais, modelos de sequência&lt;/span&gt;">Deep Learning Specialization, DeepLearning.AI
         <span>Neural networks, hyperparameter tuning and optimisation, structuring ML projects, convolutional networks, sequence models</span></li>
     </ul>
   </div>
@@ -484,8 +538,8 @@
 <section id="contact">
   <div class="wrap">
     <div class="contact">
-      <h2>Let's talk</h2>
-      <p>I take on a small number of clients at a time, on retainer or per engagement, and I am happy to work under your own confidentiality terms.</p>
+      <h2 data-pt="Vamos falar">Let's talk</h2>
+      <p data-pt="Trabalho com um número reduzido de clientes de cada vez, em avença ou por projeto, e aceito os termos de confidencialidade do cliente.">I take on a small number of clients at a time, on retainer or per engagement, and I am happy to work under your own confidentiality terms.</p>
       <a class="mail" href="mailto:antoniojmabreu@gmail.com">antoniojmabreu@gmail.com</a>
     </div>
   </div>
@@ -495,8 +549,22 @@
 
 <footer>
   <div class="wrap">
-    <span>António Abreu Consulting · independent consultant · Viseu, Portugal</span>
-    <a href="https://www.linkedin.com/company/antonio-abreu-consulting">LinkedIn</a>
+    <svg class="flockup" viewBox="0 0 330 64" role="img" aria-label="António Abreu Consulting">
+      <g fill="none" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round">
+        <g class="rails"><path d="M18.7 29 H52"/><path d="M15.0 38 H60"/><path d="M11.3 47 H68"/></g>
+        <g class="letter"><path d="M26 9 L7 55"/><path d="M26 9 L45 55"/></g>
+      </g>
+      <g font-family="Archivo, system-ui, sans-serif">
+        <text class="lk-name" x="88" y="33" font-size="22" font-weight="700" letter-spacing="-0.7">António Abreu</text>
+        <text class="lk-sub" x="88" y="50" font-size="10.5" font-weight="500" letter-spacing="3.5">Consulting</text>
+      </g>
+    </svg>
+    <span>Viseu, Portugal</span>
+    <span class="flinks">
+      <a href="mailto:antoniojmabreu@gmail.com">antoniojmabreu@gmail.com</a>
+      <a href="https://www.linkedin.com/company/antonio-abreu-consulting" data-pt="LinkedIn do negócio">Business LinkedIn</a>
+      <a href="https://www.linkedin.com/in/ant%C3%B3nio-abreu-332023160/" data-pt="LinkedIn pessoal">Personal LinkedIn</a>
+    </span>
   </div>
 </footer>
 
@@ -504,18 +572,45 @@
 (function(){
   document.body.classList.add('ready');
 
-  /* copy email */
-  var btn=document.getElementById('copy'), flag=document.getElementById('copied');
-  var mail=document.querySelector('.mail');
-  if(btn&&mail){
-    btn.addEventListener('click',function(){
-      var v=mail.textContent.trim();
-      var done=function(){flag.classList.add('on');setTimeout(function(){flag.classList.remove('on')},1800)};
-      if(navigator.clipboard&&navigator.clipboard.writeText){
-        navigator.clipboard.writeText(v).then(done).catch(function(){location.href='mailto:'+v});
-      }else{location.href='mailto:'+v}
+  /* language switch */
+  var META = {
+    en: {
+      title: 'António Abreu — Technical programme delivery and client success',
+      desc: document.querySelector('meta[name=description]').content
+    },
+    pt: {
+      title: 'António Abreu — Gestão de programa e sucesso do cliente',
+      desc: 'Sucesso do cliente e gestão de projeto, assente numa base de web3, machine learning e engenharia de software. Programas de ecossistema web3, machine learning, engenharia de software, websites e formação técnica. Viseu, Portugal.'
+    }
+  };
+  var nodes = [].slice.call(document.querySelectorAll('[data-pt]'));
+  nodes.forEach(function(n){ n.setAttribute('data-en', n.innerHTML); });
+  var buttons = [].slice.call(document.querySelectorAll('.lang button'));
+
+  function setLang(lang){
+    nodes.forEach(function(n){
+      n.innerHTML = n.getAttribute(lang === 'pt' ? 'data-pt' : 'data-en');
     });
+    document.documentElement.lang = lang;
+    document.title = META[lang].title;
+    document.querySelector('meta[name=description]').content = META[lang].desc;
+    buttons.forEach(function(b){
+      b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === lang));
+    });
+    try { localStorage.setItem('lang', lang); } catch(e) {}
   }
+
+  var initial = 'en';
+  try {
+    var saved = localStorage.getItem('lang');
+    if (saved === 'pt' || saved === 'en') initial = saved;
+    else if ((navigator.language || '').toLowerCase().indexOf('pt') === 0) initial = 'pt';
+  } catch(e) {}
+  if (initial !== 'en') setLang(initial);
+
+  buttons.forEach(function(b){
+    b.addEventListener('click', function(){ setLang(b.getAttribute('data-lang')); });
+  });
 
   /* scrollspy */
   var links=[].slice.call(document.querySelectorAll('nav a'));
